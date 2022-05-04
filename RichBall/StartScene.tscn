@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Button.gd" type="Script" id=1]
+[ext_resource path="res://theboldfont.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 150
+outline_color = Color( 0.831373, 0.239216, 0.239216, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 100
+outline_color = Color( 0.0901961, 0.145098, 0.509804, 1 )
+font_data = ExtResource( 2 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -16.0
+margin_top = -11.0
+margin_right = 1304.0
+margin_bottom = 736.0
+color = Color( 0.101961, 0.552941, 0.85098, 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 73.0
+margin_top = 60.0
+margin_right = 1234.0
+margin_bottom = 282.0
+custom_colors/font_color = Color( 0.768627, 0.792157, 0.0117647, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Rich Ball"
+align = 1
+valign = 1
+
+[node name="Button" type="Button" parent="."]
+modulate = Color( 0.105882, 0.270588, 0.482353, 1 )
+margin_left = 253.0
+margin_top = 455.0
+margin_right = 1039.0
+margin_bottom = 588.0
+mouse_default_cursor_shape = 2
+custom_colors/font_color_disabled = Color( 0.631373, 0.231373, 0.231373, 1 )
+custom_colors/font_color_focus = Color( 1, 0.984314, 0.984314, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Click Here"
+flat = true
+script = ExtResource( 1 )
+
+[connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]
